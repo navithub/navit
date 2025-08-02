@@ -1,35 +1,30 @@
-let percent = 0;
-const loadingText = document.getElementById('loadingText');
-const loadingScreen = document.getElementById('loadingScreen');
-const themeBtn = document.getElementById('toggleTheme');
-const background = document.querySelector('.background-emojis');
-
-const interval = setInterval(() => {
-  percent += 2;
-  loadingText.innerText = `Loading... ${percent}%`;
-  if (percent >= 100) {
-    clearInterval(interval);
-    loadingScreen.style.display = 'none';
-  }
-}, 50);
-
-themeBtn.addEventListener('click', () => {
-  document.body.classList.toggle('light-mode');
-  bombAnimation();
+// Toggle Light/Dark
+const toggleBtn = document.getElementById("toggleTheme");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
 });
 
-function bombAnimation() {
-  const emojis = ['🌏', '🪐', '☄️'];
-  background.innerHTML = '';
-  for (let i = 0; i < 30; i++) {
-    const span = document.createElement('span');
-    span.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-    span.style.position = 'absolute';
-    span.style.left = Math.random() * window.innerWidth + 'px';
-    span.style.top = Math.random() * window.innerHeight + 'px';
-    span.style.fontSize = '2em';
-    span.style.animation = 'explode 1s ease forwards';
-    background.appendChild(span);
+// Fake View & Online counter (example)
+let views = 1;
+let online = 8;
+
+setInterval(() => {
+  views += Math.floor(Math.random() * 2);
+  online = Math.floor(Math.random() * 20);
+  document.getElementById("views").textContent = views;
+  document.getElementById("online").textContent = online;
+}, 3000);
+
+// Loading screen
+let count = 0;
+const loader = document.getElementById("loader");
+const counter = document.getElementById("counter");
+
+const loading = setInterval(() => {
+  counter.textContent = `${count}%`;
+  count++;
+  if (count > 100) {
+    clearInterval(loading);
+    loader.style.display = "none";
   }
-  setTimeout(() => background.innerHTML = '', 1000);
-}
+}, 30);
