@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: radial-gradient(circle at center, #000022 0%, #0f0f3d 100%);
+  overflow-x: hidden;
+  color: white;
+  transition: background 1s, color 1s;
+}
+main {
+  text-align: center;
+  padding-top: 5vh;
+}
+.title {
+  font-size: 2.5em;
+  animation: glow 2s infinite ease-in-out alternate;
+}
+.description {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+.bio-button {
+  display: block;
+  width: 300px;
+  margin: 10px auto;
+  padding: 12px;
+  font-size: 1em;
+  background: #ff66ccaa;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: buttonPulse 3s infinite ease-in-out;
+}
+.bio-button:hover {
+  transform: scale(1.05);
+}
+.status, .controls {
+  margin-top: 20px;
+}
+.small {
+  width: 200px;
+}
+#loadingScreen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+}
+.background-emojis {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff00ff; }
+  to { text-shadow: 0 0 30px #00ffff; }
+}
+@keyframes buttonPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
