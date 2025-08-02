@@ -2,26 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🌟 NAVIT - Galaxy Bio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAVIT Bio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="loadingScreen">
-    <div id="loadingText">Loading... 0%</div>
+  <div id="loader">
+    <div id="counter">0%</div>
   </div>
 
-  <div class="background-emojis"></div>
+  <audio id="bgMusic" autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/27/audio_a87adfc381.mp3" type="audio/mpeg">
+  </audio>
 
-  <main>
+  <!-- Floating Emojis -->
+  <div class="emoji 🌏">🌏</div>
+  <div class="emoji 🪐">🪐</div>
+  <div class="emoji ☄️">☄️</div>
+
+  <div class="container">
     <h1 class="title">🌟 NAVIT 🌟</h1>
-    <p class="description">💖 Thank you for following! Click below to know me more ✨</p>
+    <p class="bio">💖 Thank you for following! Click below to know me more ✨</p>
 
     <div class="links">
-      <a href="#" class="bio-button">🎵 TikTok - Pranks & Memes</a>
-      <a href="#" class="bio-button">🧍 TikTok - Secret News</a>
-      <a href="#" class="bio-button">📘 Facebook - Work Contact</a>
-      <a href="#" class="bio-button">💻 YouTube - Content Creator</a>
+      <a href="https://www.tiktok.com/@navit150" target="_blank">🎵 TikTok – Pranks & Memes</a>
+      <a href="https://www.tiktok.com/@measvit3" target="_blank">🕵️ TikTok – Secret News</a>
+      <a href="https://www.facebook.com/measbunnavitt?" target="_blank">📘 Facebook – Work Contact</a>
+      <a href="https://www.youtube.com/@NAJAVIT-%E1%9E%9C%E1%9E%B8%E1%9E%8F" target="_blank">📺 YouTube – Content Creator</a>
     </div>
 
     <div class="status">
@@ -29,14 +36,10 @@
       🟢 Online Now: <span id="online">8</span>
     </div>
 
-    <div class="controls">
-      <button id="toggleTheme" class="bio-button small">☀️ភ្លឺ / 🌙ងងឹត</button>
+    <div class="actions">
+      <button id="toggleTheme">☀️ ភ្លឺ / 🌙 ងងឹត</button>
     </div>
-  </main>
-
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/audio/2023/03/23/audio_e6d1c70989.mp3" type="audio/mpeg" />
-  </audio>
+  </div>
 
   <script src="script.js"></script>
 </body>
